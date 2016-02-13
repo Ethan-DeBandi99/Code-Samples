@@ -1,0 +1,9 @@
+BlockManipulation.lsp moves blocks from a predefined start position to being stacked on top of one another in order.
+
+Monkey.lsp attempts to goal state of reaching an object in a predefined setting.
+
+mySpamClassifier.py takes examples of spam files and real emails and classifies unknown emails as such based on the examples it is given. These files are included in the spam and ham folders.
+
+
+
+

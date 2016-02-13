@@ -1,0 +1,21 @@
+(define operators (list (operator 'new :action '(go $x $y)
+				:precond '((height low) (MonkeyAt $x))
+				:effect-add '((MonkeyAt $y))
+				:effect-delete '((MonkeyAt $x)) )
+			(operator 'new :action '(pushBox $x $y)
+				:precond '((height low) (boxLoc $x) (MonkeyAt $x))
+				:effect-add '((boxLoc $y) (MonkeyAt $y))
+				:effect-delete '((boxLoc $x) (MonkeyAt $x)) )
+			(operator 'new :action '(climbUp)
+				:precond '((height Low) (MonkeyAt $x) (boxLoc $x))
+				:effect-add '((height high))
+				:effect-delete '((height low)) )
+			(operator 'new :action '(grasp)
+				:precond '((height $y) (BananaHeight $y) (MonkeyAt $x) (BananaLoc $x))
+				:effect-add '((haveBananas))
+				:effect-delete '())))
+
+
+(define init '((MonkeyAt A) (BananaLoc B) (boxLoc C) (height low) (BananaHeight high)))
+
+(define goal '((haveBananas)))
